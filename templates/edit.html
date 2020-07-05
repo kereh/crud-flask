@@ -1,0 +1,36 @@
+{% include "part/header.html" %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card shadow">
+        <div class="card-header">
+          {{ title }}
+        </div>
+        <form action="http://127.0.0.1:8000/edit_proc/{{ row.id }}" method="post">
+          <div class="card-body">
+            <input type="hidden" name="id" value="{{ row.id }}">
+            <div class="form-group">
+              <label for="nama">Nama</label>
+              <input type="text" name="nama" value="{{ row.nama }}" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="umur">Umur</label>
+              <input type="number" name="umur" value="{{ row.umur }}" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="alamat">Alamat</label>
+              <input type="text" name="alamat" value="{{ row.alamat }}" class="form-control">
+            </div>
+          </div>
+          <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Simpan</button>
+            <button type="reset" class="btn btn-danger">Reset</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% include "part/footer.html" %}
